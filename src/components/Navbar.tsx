@@ -84,7 +84,7 @@ const Navbar = () => {
                   <Button variant="outline">Login</Button>
                 </Link>
                 <Link to="/signup">
-                  <Button className="gradient-primary glow-primary">
+                  <Button className="glow-primary">
                     Get Started
                   </Button>
                 </Link>

@@ -362,7 +362,7 @@ const ToolDetail = () => {
                         <Button
                           onClick={handleCommentSubmit}
                           disabled={submittingComment || !comment.trim()}
-                          className="gradient-primary"
+                          
                         >
                           {submittingComment ? (
                             <>
