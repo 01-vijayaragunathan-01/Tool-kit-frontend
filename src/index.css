@@ -1,0 +1,221 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 250 100% 98%;
+    --foreground: 250 15% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 250 15% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 250 15% 10%;
+
+    --primary: 251 91% 68%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 340 82% 67%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 250 20% 95%;
+    --muted-foreground: 250 10% 45%;
+
+    --accent: 280 89% 68%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 250 20% 90%;
+    --input: 250 20% 90%;
+    --ring: 251 91% 68%;
+
+    --radius: 1rem;
+
+    --gradient-primary: linear-gradient(135deg, hsl(251 91% 68%), hsl(280 89% 68%));
+    --gradient-secondary: linear-gradient(135deg, hsl(280 89% 68%), hsl(340 82% 67%));
+    --gradient-hero: linear-gradient(135deg, hsl(251 91% 68%) 0%, hsl(280 89% 68%) 50%, hsl(340 82% 67%) 100%);
+    
+    --glow-primary: 0 8px 32px hsl(251 91% 68% / 0.4);
+    --glow-secondary: 0 8px 32px hsl(340 82% 67% / 0.4);
+    --glow-accent: 0 8px 32px hsl(280 89% 68% / 0.4);
+    
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .dark {
+    --background: 250 30% 8%;
+    --foreground: 250 10% 95%;
+
+    --card: 250 25% 12%;
+    --card-foreground: 250 10% 95%;
+
+    --popover: 250 25% 12%;
+    --popover-foreground: 250 10% 95%;
+
+    --primary: 251 91% 68%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 340 82% 67%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 250 20% 18%;
+    --muted-foreground: 250 10% 60%;
+
+    --accent: 280 89% 68%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 250 20% 20%;
+    --input: 250 20% 20%;
+    --ring: 251 91% 68%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+
+  .gradient-secondary {
+    background: var(--gradient-secondary);
+  }
+
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+
+  .glow-primary {
+    box-shadow: var(--glow-primary);
+  }
+
+  .glow-secondary {
+    box-shadow: var(--glow-secondary);
+  }
+
+  .glow-accent {
+    box-shadow: var(--glow-accent);
+  }
+
+  .smooth-transition {
+    transition: var(--transition-smooth);
+  }
+}
+
+@layer utilities {
+  .glass-card {
+    @apply bg-card/80 backdrop-blur-xl border border-border/50;
+  }
+  
+  .hover-lift {
+    @apply smooth-transition hover:-translate-y-2 hover:glow-primary;
+  }
+}
+
+
+/* Add these animations to your global CSS file (e.g., index.css or App.css) */
+
+/* Fade-in animation for scroll */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.animate-on-scroll.fade-in-active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Mobile menu slide down */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slide-down {
+  animation: slideDown 0.3s ease forwards;
+}
+
+/* Hover lift effect */
+.hover-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* Smooth transition utility */
+.smooth-transition {
+  transition: all 0.3s ease;
+}
+
+/* Glow effects */
+.glow-primary {
+  box-shadow: 0 0 20px rgba(var(--primary), 0.3);
+}
+
+.glow-secondary {
+  box-shadow: 0 0 20px rgba(var(--secondary), 0.3);
+}
+
+.glow-accent {
+  box-shadow: 0 0 20px rgba(var(--accent), 0.3);
+}
+
+/* Glass morphism card */
+.glass-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Gradient utilities */
+.gradient-primary {
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+}
+
+.gradient-secondary {
+  background: linear-gradient(135deg, var(--secondary), var(--primary));
+}
+
+/* Fade in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 1s ease forwards;
+}
