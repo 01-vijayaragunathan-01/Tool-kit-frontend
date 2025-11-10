@@ -15,7 +15,7 @@ const Footer = () => {
                 <Sparkles className="w-6 h-6 text-white" />
               </div>
               <span className="text-xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-                Tool Kit
+                Tool Market
               </span>
             </Link>
             <p className="text-sm text-muted-foreground leading-relaxed">

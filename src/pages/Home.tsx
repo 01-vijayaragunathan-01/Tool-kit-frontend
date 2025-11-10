@@ -159,7 +159,7 @@ const Home = () => {
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
               Why Choose{" "}
               <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-                Tool Kit
+                Tool Market
               </span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
