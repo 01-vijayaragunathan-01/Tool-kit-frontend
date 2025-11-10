@@ -36,8 +36,8 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2 group">
-            <div className="w-10 h-10 rounded-xl gradient-primary bg-gradient-to-br from-purple-500 to-pink-500  flex items-center justify-center glow-primary smooth-transition group-hover:scale-110">
-              <Sparkles className="w-6 h-6 text-white" />
+            <div className="w-10 h-10 rounded-xl flex items-center justify-center glow-primary smooth-transition group-hover:scale-110">
+              <img src="icon.svg" alt="" />
             </div>
             <span className="text-xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
               Tool Market
